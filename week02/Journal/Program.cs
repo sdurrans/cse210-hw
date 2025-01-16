@@ -6,8 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Journal jourrnal = new Journal();
-        //PromptGenerator promptGenerator = new PromptGenerator();
+        //Journal journal = new Journal();
+        PromptGenerator promptGenerator = new PromptGenerator();
 
         Console.WriteLine("Welcome to the Journal Program! .");
         Console.WriteLine("Please select of the the Following choices. ");
@@ -25,8 +25,14 @@ class Program
 
             if (choice == "1")
             {
-                //WriteNewEntry();
-                Console.WriteLine("Run new entry code");
+                
+                string prompt = promptGenerator.GetRandomPrompt();
+                Console.WriteLine($"Prompt: {prompt}");
+                Console.Write("Your response: ");
+                string response = Console.ReadLine();
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                //journal.AddEntry(new Entry(date, prompt, response));
+            
             }
             else if (choice == "2")
             {
