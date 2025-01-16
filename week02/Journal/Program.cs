@@ -38,6 +38,7 @@ class Program
             {
                 //DisplayJournal();
                 Console.WriteLine("Run display code");
+                journal.DisplayAll();
             }
             else if (choice == "3")
             {
