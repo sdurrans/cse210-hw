@@ -23,24 +23,23 @@ class Program
 
             if (choice == "1")
             {
-                
-                
-            
+                Console.WriteLine("write ");
             }
             else if (choice == "2")
             {
-                
+                Console.WriteLine("display ");
             }
             else if (choice == "3")
             {
-               
+               Console.WriteLine("load");
             }
             else if (choice == "4")
             {
-                
+                Console.WriteLine("save ");
             }
             else if (choice == "5")
             {
+                Console.WriteLine("quit ");
                 break;
             }
         }
