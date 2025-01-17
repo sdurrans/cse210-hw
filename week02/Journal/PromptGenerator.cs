@@ -10,12 +10,16 @@ public class PromptGenerator
         "Write a letter to your future self about what you are experiencing today.",
         "Imagine a conversation between your present self and your 10-year-old self. What would you say?",
         "What is one way I can show love or appreciation to someone I care about?",
-    }
+    };
 
 
     public string GetRandomPrompt()
     {
-        //Get a random index value and lookup the string in _prompts
-        return "";
+        // Get a random index value and lookup the string in _prompts
+        Random rand = new Random();
+        int randomIndex = rand.Next(_prompts.Count); 
+        string prompt = _prompts[randomIndex]; 
+        Console.WriteLine(prompt);
+        return prompt;
     }
 }
