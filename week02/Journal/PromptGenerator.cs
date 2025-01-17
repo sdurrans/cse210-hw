@@ -19,7 +19,8 @@ public class PromptGenerator
         Random rand = new Random();
         int randomIndex = rand.Next(_prompts.Count); 
         string prompt = _prompts[randomIndex]; 
-        Console.WriteLine(prompt);
+        Console.WriteLine($"Prompt: {prompt}");
+        Console.Write("> ");
         return prompt;
     }
 }

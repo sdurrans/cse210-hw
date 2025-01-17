@@ -4,12 +4,18 @@ public class Journal
 
     public void AddEntry(Entry newEntry)
     {
-        // PUT NEWENTRY  INTO _ENTRIES
+        _entries.Add(newEntry);
     }
 
     public void DisplayAll()
     {
         //DISPLAY ALL THE ENTRIED INTO THE _ENTRY LIST
+        Console.WriteLine("\nJournal Entries:");
+            foreach (var entry in _entries)
+            {
+                entry.Display();
+                Console.WriteLine(); 
+            }
     }
 
 
