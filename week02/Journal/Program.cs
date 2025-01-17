@@ -39,11 +39,15 @@ class Program
             }
             else if (choice == "3")
             {
-               Console.WriteLine("load");
+                Console.Write("Enter the file name to load from: ");
+                string fileName = Console.ReadLine();
+                journal.LoadFromFile(fileName);
             }
             else if (choice == "4")
             {
-                Console.WriteLine("save ");
+                Console.Write("Enter the file name to save to: ");
+                string fileName = Console.ReadLine();
+                journal.SaveToFile(fileName);
             }
             else if (choice == "5")
             {
