@@ -9,28 +9,48 @@ class Scripture
     {
         _reference = reference;
 
-        string[] words = text.Split(new[] { ' ', '.', ';', ',' }, StringSplitOptions.RemoveEmptyEntries);
-        _words = new List<Word>();
+        string[] wordArray = text.Split(new[] { ' ', '.', ';', ',' }, StringSplitOptions.RemoveEmptyEntries);
+        _words = new Word[wordArray.Length];
 
-        foreach (string word in words)
+        for (int i = 0; i < wordArray.Length; i++)
         {
-            _words.Add(new Word(word));
+            _words[i] = new Word(wordArray[i]);
         }
     }
 
     public void HideRandomWords(int numberToHide)
     {
-        Random random = new Random();
+         Random random = new Random();
         int hiddenCount = 0;
+
+        while (hiddenCount < numberToHide)
+        {
+            int index = random.Next(_words.Length);
+            if (!_words[index].IsHidden())
+            {
+                _words[index].Hide();
+                hiddenCount++;
+            }
+        }
     }
 
     public string GetDisplayText()
     {
-        return "Scripture display text";
+        string displayText = _reference.GetDisplayText() + "\n";
+        foreach (var word in _words)
+        {
+            displayText += word.GetDisplayText() + " ";
+        }
+        return displayText;
     }
 
     public bool IsCompletelyHidden()
     {
+        foreach (var word in _words)
+        {
+            if (!word.IsHidden())
+                return false;
+        }
         return true;
     }
 

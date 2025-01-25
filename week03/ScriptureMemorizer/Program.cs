@@ -10,17 +10,19 @@ class Program
 
         while (true)
         {
-            Console.Clear();
-            scripture.GetDisplayText();
+             Console.Clear();
+            Console.WriteLine(scripture.GetDisplayText());
             Console.WriteLine("Press enter to continue or type 'quit' to finish");
 
             string input = Console.ReadLine();
-            if (input== "quit")
+            if (input == "quit")
             {
                 break;
             }
 
-            if (scripture.HideRandomWords()==false)
+            scripture.HideRandomWords(3);  
+
+            if (scripture.IsCompletelyHidden())
             {
                 Console.WriteLine("All words are hidden.");
                 break;

@@ -7,17 +7,18 @@ class Word
 
     public Word(string text)
     {
-
+        _text = text;
+        _isHidden = false;
     }
 
     public void Hide()
     {
-
+         _isHidden = true;
     }
 
     public void Show()
     {
-
+        _isHidden = false;
     }
 
     public bool IsHidden()
@@ -27,6 +28,13 @@ class Word
 
     public string GetDisplayText()
     {
-        return "Words display text";
+        if (_isHidden)
+        {
+            return "_____";
+        }
+        else
+        {
+            return _text;
+        }
     }
 }
