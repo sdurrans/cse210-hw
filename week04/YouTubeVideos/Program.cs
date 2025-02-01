@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
+        static void Main()
+    {
+        VideoData list = new VideoData();
+        list.DisplayAllVideos();
+    }
     }
 }

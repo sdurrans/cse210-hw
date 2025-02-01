@@ -1,11 +1,11 @@
 using System;
 
-public class Comments
+public class Comment
 {
     public string Person { get;private set;}
     public string Text {get; private set;}
 
-    public Comments(string person, string text)
+    public Comment(string person, string text)
     {
         
     }
