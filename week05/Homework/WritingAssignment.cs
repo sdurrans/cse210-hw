@@ -1,12 +1,12 @@
 using System;
 
-class WritingAssignment : Assignment
+class WritingAssignment 
 
 {
     public string _title= "";
 
     public string GetWritingInformation()
     {
-        return "Writing Information"
+        return "Writing Information";
     }
 }
