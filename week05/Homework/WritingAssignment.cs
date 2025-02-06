@@ -8,11 +8,11 @@ class WritingAssignment : Assignment
     public WritingAssignment (string name, string topic, string title)
     : base(name,topic)
     {
-        _title = title
+        _title = title;
     }
 
     public string GetWritingInformation()
     {
-        return "Writing Information";
+        return $"{_title} by {_studentName}";
     }
 }

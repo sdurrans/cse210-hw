@@ -10,5 +10,9 @@ class Program
         MathAssignment assignment2 = new MathAssignment("Jessica Durrant","Law School 101", "7.3", "8-19");
         Console.WriteLine(assignment2.GetSummary());
         Console.WriteLine(assignment2.GetHomeworkList());
+
+        WritingAssignment assignment3 = new WritingAssignment("Brigham Durrant", "Creative Writing", "Minecraft Larry");
+        Console.WriteLine(assignment3.GetSummary());
+        Console.WriteLine(assignment3.GetWritingInformation());
     }
 }
