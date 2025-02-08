@@ -1,6 +1,9 @@
 using System;
 
-class ReflectingActivity
+class ReflectingActivity //: Activity
 {
+    void Run()
+    {       
     Console.WriteLine("ReflectingActivity");
+    }
 }

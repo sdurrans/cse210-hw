@@ -1,6 +1,9 @@
 using System;
 
-class ListingActivity
+class ListingActivity//: Activity
 {
-    Console.WriteLine("ListingActivity");
+    void Run()
+    {
+        Console.WriteLine("ListingActivity");
+    }
 }

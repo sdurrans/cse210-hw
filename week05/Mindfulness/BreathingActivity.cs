@@ -1,6 +1,9 @@
 using System;
 
-class BreathingActivity
+class BreathingActivity//: Activity
 {
-    Console.WriteLine("BreathingActivity");
+    void Run()
+    {
+        Console.WriteLine("BreathingActivity");
+    }
 }
