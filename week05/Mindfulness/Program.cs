@@ -21,7 +21,13 @@ class Program
 
             if (choice == "1")
             {
-                Console.WriteLine("Breathing");
+                Console.WriteLine("How long do you want to do the activity? ");
+                string sduration = Console.ReadLine();
+                int duration = int.Parse(sduration);
+
+                BreathingActivity bactivity = new BreathingActivity(duration);
+
+                bactivity.Run();
             }
             else if (choice == "2")
              {
@@ -33,7 +39,7 @@ class Program
             }
             else if (choice == "4")
             {
-                Console.WriteLine("quit ");
+                Console.WriteLine("Quit ");
                 break;
             }
             

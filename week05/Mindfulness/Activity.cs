@@ -13,8 +13,12 @@ class Activity
         _duration = duration;
     }
 
-    void DisplayStartingMessage()
+    public void DisplayStartingMessage()
     {
-        Console.WriteLine("Starting activity");
+        Console.WriteLine($"Welcome to the {_name}");
+        Console.WriteLine("");
+        Console.WriteLine($"{_description}");
+        Console.WriteLine("");
+        Console.WriteLine($"{_duration}");
     }
 }
