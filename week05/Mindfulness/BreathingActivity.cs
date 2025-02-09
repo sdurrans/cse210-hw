@@ -20,9 +20,11 @@ class BreathingActivity: Activity
         while (DateTime.Now < endTime)
         {
             Console.WriteLine("Breath in...");
-            ShowSpinner(3);
+            ShowSpinner(4);
+            Thread.Sleep(1000);
             Console.WriteLine("Now breath out...");
-            ShowSpinner(3);
+            ShowSpinner(4);
+            Thread.Sleep(1000);
         }
         
         DisplayEndingMessage();

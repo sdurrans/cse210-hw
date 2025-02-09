@@ -11,7 +11,7 @@ class ReflectingActivity : Activity
         "Think of a time when you did something truly selfless."
     };
 
-    private List<string> _reflectPrompts = new List<string>()
+    private List<string> _question = new List<string>()
     {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -31,20 +31,53 @@ class ReflectingActivity : Activity
 
     public void Run()
     {
+        Console.Clear(); 
         DisplayStartingMessage();
         int duration = GetDuration();
         
+        Console.Clear(); 
+        Console.WriteLine("\nConsider the following prompt:");
+        Console.WriteLine("");
+        Console.WriteLine($"--- {GetRandomPrompt()} ---");
+        Console.WriteLine("When you are ready, press enter");
+        Console.ReadLine();
+               
         
-        GetRandomPrompt();
+        Console.WriteLine("Now ponder on each of the following questions in ralation to this experience.");
+        Console.WriteLine("You may begin in: ");   
+        ShowCountDown(7);
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+
+        while(DateTime.Now < endTime)
+        {            
+            Console.WriteLine($">{GetRandomQuestion()}");
+            ShowSpinner(10); 
+        }
+
+        DisplayEndingMessage();
     }
 
-    public string GetRandomPrompt()
+
+    private string GetRandomPrompt()
     {
         Random rand = new Random();
         int randomIndex = rand.Next(_prompts.Count); 
         string prompt = _prompts[randomIndex]; 
-        Console.WriteLine($"Prompt: {prompt}");
-        Console.Write("> ");
+    
         return prompt;
+        
     }
+    private string GetRandomQuestion()
+    {
+        Random rand = new Random();
+        int randomIndex = rand.Next(_question.Count); 
+        string question = _question[randomIndex]; 
+        
+
+        return question;
+    
+    }
+    
 }

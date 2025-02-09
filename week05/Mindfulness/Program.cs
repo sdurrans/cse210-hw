@@ -4,14 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Activity A1 = new Activity();
-
         Console.WriteLine("\nHello, Welcome to the Mindfulness Program!");
         
-
         while (true)
         {
-            Console.WriteLine("\nPlease select of the the Following choices. \n");
+            Console.Clear();
+            Console.WriteLine("\nPlease select one of the the Following choices. \n");
 
             Console.WriteLine("1. Start breathing activity");
             Console.WriteLine("2. Start reflecting activity");
@@ -23,7 +21,6 @@ class Program
 
             if (choice == "1")
             {
-                
                 BreathingActivity bactivity = new BreathingActivity();
 
                 bactivity.Run();
@@ -42,7 +39,8 @@ class Program
             }
             else if (choice == "4")
             {
-                Console.WriteLine("Quit ");
+                Console.WriteLine("Come back for more activities later!");
+                Thread.Sleep(2000);
                 break;
             }
             
