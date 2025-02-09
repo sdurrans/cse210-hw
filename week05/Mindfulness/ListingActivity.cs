@@ -1,9 +1,20 @@
 using System;
 
-class ListingActivity//: Activity
+class ListingActivity: Activity
 {
-    void Run()
+    public ListingActivity() : 
+    base ("Listening Activity","This activity will help you reflect on the good things in your life by \nhaving you list as many things as you can in a certain area.")
     {
-        Console.WriteLine("ListingActivity");
+
+    }
+
+    public void Run()
+    {
+        
+        DisplayStartingMessage();
+
+        int duration = GetDuration();
+
+        //Console.WriteLine($"ListingActivity {_duration} long");
     }
 }

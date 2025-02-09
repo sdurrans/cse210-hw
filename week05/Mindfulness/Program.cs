@@ -6,11 +6,13 @@ class Program
     {
         //Activity A1 = new Activity();
 
-        Console.WriteLine("Hello, Welcome to the Mindfulness Program!");
-        Console.WriteLine("Please select of the the Following choices. ");
+        Console.WriteLine("\nHello, Welcome to the Mindfulness Program!");
+        
 
         while (true)
         {
+            Console.WriteLine("\nPlease select of the the Following choices. \n");
+
             Console.WriteLine("1. Start breathing activity");
             Console.WriteLine("2. Start reflecting activity");
             Console.WriteLine("3. Start listing activity");
@@ -21,21 +23,22 @@ class Program
 
             if (choice == "1")
             {
-                Console.WriteLine("How long do you want to do the activity? ");
-                string sduration = Console.ReadLine();
-                int duration = int.Parse(sduration);
-
-                BreathingActivity bactivity = new BreathingActivity(duration);
+                
+                BreathingActivity bactivity = new BreathingActivity();
 
                 bactivity.Run();
             }
             else if (choice == "2")
-             {
-                Console.WriteLine("Reflecting");
+            {
+                ReflectingActivity ractivity = new ReflectingActivity();
+
+                ractivity.Run();
             }
             else if (choice == "3")
-             {
-                Console.WriteLine("Listing");
+            {
+                ListingActivity lactivity = new ListingActivity();
+
+                lactivity.Run();
             }
             else if (choice == "4")
             {
