@@ -17,7 +17,12 @@ class Customer
         return Address.IsInUSA();
     }
 
-    public string GetName() => Name;
-    public Address GetAddress() => Address;
+    public string GetName()
+    {
     
+    }
+    public Address GetAddress() 
+    {
+        
+    }
 }

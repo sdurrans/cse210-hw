@@ -17,7 +17,7 @@ class BreathingActivity: Activity
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
 
-        while (DateTime.Now < endTime)
+        while (startTime < endTime)
         {
             Console.WriteLine("Breath in...");
             ShowSpinner(4);

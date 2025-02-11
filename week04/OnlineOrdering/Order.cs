@@ -4,44 +4,44 @@ using System.Collections.Generic;
 class Order
 {
     private List<Product> Products;
-    private Customer Customer;
-    private const decimal USA_SHIPPING_COST = 5m;
-    private const decimal INTERNATIONAL_SHIPPING_COST = 35m;
-
+    private Customer _customer;
+  
     public Order(Customer customer)
     {
-        Customer = customer;
-        Products = new List<Product>();
-    }
-
-    public void AddProduct(Product product)
-    {
-       Products.Add(product);
+        _customer = customer;
+        Products = new List<Product>();       
     }
 
     public decimal GetTotalCost()
     {
-        decimal total = 0;
-        foreach (var product in Products)
-        {
-            total += product.GetTotalCost();
-        }
-        total += Customer.IsInUSA() ? USA_SHIPPING_COST : INTERNATIONAL_SHIPPING_COST;
-        return total;
+       decimal total = 0;
+         foreach(Product product in Products)
+         {
+              total += product.GetTotalPrice();
+         }
+         if(_customer.IsInUSA())
+         {
+             shippingCost = 5;
+         }
+         else
+         {
+             shippingCost = 10;
+         }
+            return total + shippingCost;
     }
 
     public string GetPackingLabel()
     {
-        string label = "Packing Label:\n";
-        foreach (var product in Products)
-        {
-            label += $"{product.GetName()} (ID: {product.GetProductId()})\n";
-        }
-        return label;
+       string packingLabel = "";
+         foreach(Product product in Products)
+         {
+              packingLabel += product.GetPackingLabel();
+         }
+         return packingLabel;
     }
 
     public string GetShippingLabel()
     {
-         return $"Shipping To: {Customer.GetName()}\n{Customer.GetAddress().GetFullAddress()}";
+        return $"{_customer.GetName()}\n{_customer.GetAddress()}";
     }
 }

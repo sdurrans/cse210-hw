@@ -2,10 +2,10 @@ using System;
 
 class Product
 {
-    public string Name { get; }  
-    public string ProductId { get; }  
-    public decimal Price { get; }  
-    public int Quantity { get; } 
+    public string Name; 
+    public string ProductId; 
+    public decimal Price;
+    public int Quantity;
 
     public Product(string name, string productId, decimal price, int quantity)
     {
@@ -19,10 +19,15 @@ class Product
 
     public decimal GetTotalCost()
     {
-        return Price * Quantity;
         
     }
 
-    public string GetName() => Name;
-    public string GetProductId() => ProductId;
+    public string GetName() 
+    {
+        
+    }
+    public string GetProductId() 
+    {   
+        
+    }
 }

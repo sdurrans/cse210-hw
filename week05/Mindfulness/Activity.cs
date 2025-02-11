@@ -60,7 +60,7 @@ class Activity
 
         int i = 0;
 
-        while (DateTime.Now < endTime)
+        while (startTime < endTime)
         {
             string s = spinner[i];
             Console.Write(s);

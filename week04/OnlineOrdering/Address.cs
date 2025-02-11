@@ -20,11 +20,11 @@ class Address
 
     public bool IsInUSA()
     {
-        return Country.Equals("USA", StringComparison.OrdinalIgnoreCase);
+       
     }
 
     public string GetFullAddress()
     {
-        return $"{Street}\n{City}, {State}\n{Country}";
+        
     }
 }
