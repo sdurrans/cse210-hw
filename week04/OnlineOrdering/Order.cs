@@ -12,35 +12,29 @@ class Order
         Products = new List<Product>();       
     }
 
-    public decimal GetTotalCost()
+    public void GetTotalCost()
     {
-       decimal total = 0;
-         foreach(Product product in Products)
-         {
-              total += product.GetTotalPrice();
-         }
-         if(_customer.IsInUSA())
-         {
-             shippingCost = 5;
-         }
-         else
-         {
-             shippingCost = 10;
-         }
-            return total + shippingCost;
+        decimal totalCost = 0;
+        foreach (Product product in Products)
+        {
+            totalCost += product.GetTotalCost();
+        }
+
+        decimal shippingCost = 0;   
+        return totalCost + shippingCost;
     }
 
-    public string GetPackingLabel()
+    public  void GetPackingLabel()
     {
        string packingLabel = "";
          foreach(Product product in Products)
          {
-              packingLabel += product.GetPackingLabel();
+              packingLabel += $"{product.GetName()} ({product.GetProductId()})\n";
          }
          return packingLabel;
     }
 
-    public string GetShippingLabel()
+    public void GetShippingLabel()
     {
         return $"{_customer.GetName()}\n{_customer.GetAddress()}";
     }

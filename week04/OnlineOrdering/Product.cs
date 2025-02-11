@@ -19,15 +19,15 @@ class Product
 
     public decimal GetTotalCost()
     {
-        
+        return Price * Quantity;
     }
 
     public string GetName() 
     {
-        
+        return Name;
     }
     public string GetProductId() 
     {   
-        
+        return ProductId;
     }
 }

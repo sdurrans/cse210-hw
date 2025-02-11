@@ -20,11 +20,18 @@ class Address
 
     public bool IsInUSA()
     {
-       
+        if(Country == "USA")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public string GetFullAddress()
     {
-        
+        return $"{Street}\n{City}, {State}\n{Country}";
     }
 }

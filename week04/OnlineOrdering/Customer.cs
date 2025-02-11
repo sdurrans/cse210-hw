@@ -2,8 +2,8 @@ using System;
 
 class Customer
 {
-   public string Name { get; }
-    public Address Address { get; }
+   public string Name;
+    public Address Address;
 
     public Customer(string name, Address address)
     {
@@ -19,10 +19,10 @@ class Customer
 
     public string GetName()
     {
-    
+        return Name;
     }
     public Address GetAddress() 
     {
-        
+        return Address;
     }
 }
