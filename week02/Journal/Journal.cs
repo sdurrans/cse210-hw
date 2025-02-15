@@ -9,7 +9,7 @@ public class Journal
 
     public void DisplayAll()
     {
-        //DISPLAY ALL THE ENTRIED INTO THE _ENTRY LIST
+        
         Console.WriteLine("\nJournal Entries:");
             foreach (var entry in _entries)
             {
@@ -21,7 +21,7 @@ public class Journal
 
     public void SaveToFile(string file)
     {
-        //LOOP THROUGH EACH ITEM IN _ENTRIED AND SAVE IN A FILE
+        
         using (StreamWriter writer = new StreamWriter(file))
     {
         foreach (var entry in _entries)
