@@ -6,14 +6,14 @@ public class Goal
     protected string _description;
     protected int _points;
     protected bool _isComplete;
-    
+
 
     public Goal(string name, string description, int points)
     {
         _shortname = name;
         _description = description;
         _points = points;
-        _isComplete = false;        
+        _isComplete = false;
     }
     public virtual string GetShortName()
     {
@@ -46,11 +46,11 @@ public class Goal
     public virtual string GetDetailsString()
     {
         return $" {_shortname} - {_description} - Points: {_points} - Complete: {_isComplete}";
-    }   
+    }
 
     public virtual string GetStringRepresentation()
     {
         return $" {_shortname},{_description},{_points},{_isComplete}";
     }
-    
+
 }

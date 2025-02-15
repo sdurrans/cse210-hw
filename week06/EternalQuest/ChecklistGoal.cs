@@ -11,7 +11,7 @@ public class ChecklistGoal : Goal
         _target = target;
         _bonus = bonus;
     }
-    
+
     public int GetBonus()
     {
         return _bonus;
@@ -25,8 +25,8 @@ public class ChecklistGoal : Goal
     {
         return _amountCompleted;
     }
-    public new void RecordEvent()
-    {        
+    public override void RecordEvent()
+    {
         if (_amountCompleted < _target)
         {
             _amountCompleted++;

@@ -7,9 +7,9 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        
+
         Console.WriteLine($"You have recorded an event for the goal: {_shortname}");
-        
+
     }
     public override bool IsComplete()
     {
