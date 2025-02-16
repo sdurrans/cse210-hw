@@ -2,32 +2,54 @@ using System;
 
 class Product
 {
-    public string Name; 
-    public string ProductId; 
-    public decimal Price;
-    public int Quantity;
+    private string _name; 
+    private string _productId; 
+    private float _price;
+    private int _quantity;
 
-    public Product(string name, string productId, decimal price, int quantity)
+    public Product(string name, string productId, float price)
     {
        
-        Name = name;
-        ProductId = productId;
-        Price = price;
-        Quantity = quantity;
+        _name = name;
+        _productId = productId;
+        _price = price;
+        _quantity = 1;
     
     }
-
-    public decimal GetTotalCost()
+    public Product(string name, string productId, float price, int quantity)
     {
-        return Price * Quantity;
+        _name = name;
+        _productId = productId;
+        _price = price;
+        _quantity = quantity;
     }
 
-    public string GetName() 
+    public string Name
     {
-        return Name;
+        get { return _name; }
     }
-    public string GetProductId() 
-    {   
-        return ProductId;
+
+    public string ProductId
+    {
+        get { return _productId; }
+    }
+
+    public float Price
+    {
+        get { return _price; }
+    }
+
+    public int Quantity
+    {
+        get { return _quantity; }
+    }
+
+    public float GetTotalCost()
+    {
+        return _price * _quantity;
+    }
+    public string GetPackingLabel()
+    {
+        return $"{_name} ({_productId})";
     }
 }

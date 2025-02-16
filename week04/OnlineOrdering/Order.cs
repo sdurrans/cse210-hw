@@ -3,39 +3,55 @@ using System.Collections.Generic;
 
 class Order
 {
-    private List<Product> Products;
+    private List<Product> _products;
     private Customer _customer;
   
     public Order(Customer customer)
     {
         _customer = customer;
-        Products = new List<Product>();       
+        _products = new List<Product>();       
     }
 
-    public void GetTotalCost()
+    public void AddProduct(Product product)
     {
-        decimal totalCost = 0;
-        foreach (Product product in Products)
+        _products.Add(product);
+    }
+
+    public float CalculateTotalPrice()
+    {
+        float total = 0;
+        foreach (Product product in _products)
         {
-            totalCost += product.GetTotalCost();
+            total += product.GetTotalCost();
         }
-
-        decimal shippingCost = 0;   
-        return totalCost + shippingCost;
+        return total + ShippingCost();
     }
 
-    public  void GetPackingLabel()
+    public float ShippingCost()
     {
-       string packingLabel = "";
-         foreach(Product product in Products)
-         {
-              packingLabel += $"{product.GetName()} ({product.GetProductId()})\n";
-         }
-         return packingLabel;
+        if (_customer.GetAddress().GetCountry() == "USA")
+        {
+            return 5.00f;
+        }
+        else
+        {
+            return 35.00f;
+        }
     }
 
-    public void GetShippingLabel()
+    public string GetPackingLabel()
     {
-        return $"{_customer.GetName()}\n{_customer.GetAddress()}";
+        string packingLabel = "";
+        foreach (Product product in _products)
+        {
+            packingLabel += product.GetPackingLabel() + "\n";
+        }
+        return packingLabel;
+    }
+
+    public string GetShippingLabel()
+    {
+        return _customer.DisplayCustomer();
     }
 }
+

@@ -1,1 +1,0 @@
- make a goal,complete as simple goal creation and record it complete,100,True
