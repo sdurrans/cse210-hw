@@ -1,0 +1,3 @@
+[ ] speak in sacrament meeting,speak when asked,100
+[ ] study the scriptures,study for 10,50
+[ ] attend the temple,attend and perfrom any ordiunance,50,0,3,500
